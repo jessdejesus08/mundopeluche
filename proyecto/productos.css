@@ -1,0 +1,158 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  max-width: 1500px;
+  margin: 0 auto;
+}
+img{
+  max-width: 97%;
+  padding: 0%
+
+}
+.container-title{
+  padding: 30px;
+  background-color:#efefb4; 
+  margin-bottom: 50px;
+  color: #222;
+}
+main{
+  display: flex;
+  column-gap: 30px;
+  margin-bottom: 80px;
+}
+.container-img{
+ background-color:#f7f7f9; 
+  flex:1;
+}
+.conntainer-info-product{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+}
+.container-price{
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e4e4;
+}
+.container-price span{
+  font-size: 50px;
+  font-weight: 300;
+}
+.container-details-product{
+  padding:30px 0;
+
+}
+.container-add-cart{
+  display: flex;
+  column-gap:20px;
+  padding-bottom:30px;
+  border-bottom:1px solid #e4e4e4;
+}
+.container-quantity{
+  position: relative;
+
+}
+
+.input-quantity:focus{
+  outline:none;
+}
+
+.input-quantity::-webkit-inner-spin-button,
+.input-quantity::-webkit-outer-spin-button{
+  -webkit-appearance:none;
+  appearance:none;
+}
+.btn-add-to-cart{
+  border:none;
+  background-color: #252525;
+  padding:10px;
+  color:#f7f7f7;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  grid-gap:5px;
+  font-weight:700;
+  cursor: pointer;
+}
+.btn-add-to-cart:hover{
+  color:#1bbeb4;
+}
+.container-descripcion{
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 10px 0;
+}
+.title-descripcion{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  cursor:pointer;
+}
+.text-descripcion{
+  font-size:20px; 
+  color: #252525;
+  line-height:22px;
+  margin-top: 25px;
+}
+#panel {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 300px;
+  position: fixed; /* Agregamos position: fixed */
+  top: 50%; /* Posicionamos el panel en el 50% de la altura de la página */
+  left: 50%; /* Posicionamos el panel en el 50% del ancho de la página */
+  transform: translate(-50%, -50%); /* Ajustamos la posición para que quede exactamente en el centro */
+  display: none; /* Ocultamos el panel por defecto */
+}
+
+
+
+
+
+
+
+
+
+
+/*encabezado*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+}
+.nav-img{
+width:95px;
+height:95px;
+margin-left:-30px;
+margin-top:-22px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding:0;
+  
+}
+
+.nav-item {
+  color: #1B2631;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2em;
+  transition: color 0.3s;
+}
+
+
+.nav-item:hover {
+  color:blue;  /* Color de hover */
+}
+
+
