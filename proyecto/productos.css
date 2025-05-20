@@ -97,25 +97,72 @@ main{
   line-height:22px;
   margin-top: 25px;
 }
-#panel {
-  background-color: #f0f0f0;
-  padding: 20px;
-  border: 1px solid #ccc;
-  width: 300px;
-  position: fixed; /* Agregamos position: fixed */
-  top: 50%; /* Posicionamos el panel en el 50% de la altura de la página */
-  left: 50%; /* Posicionamos el panel en el 50% del ancho de la página */
-  transform: translate(-50%, -50%); /* Ajustamos la posición para que quede exactamente en el centro */
-  display: none; /* Ocultamos el panel por defecto */
+
+.ag_cart{
+  border:none;
+  background-color: #252525;
+  padding:10px;
+  color:#f7f7f7;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  grid-gap:5px;
+  font-weight:700;
+  cursor: pointer;
+}
+.ag_cart:hover{
+  color:#1bbeb4;
 }
 
 
 
+ #panel form {
+    margin-top: 20px;
+  }
 
+  #panel input,
+  #panel select {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 6px 0 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
 
+  #panel button#enviar {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
 
+  #panel button#enviar:hover {
+    background-color: #333;
+  }
 
+  /* Botón cerrar (X) */
+  #cerrar-panel {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
 
+  #cerrar-panel:hover {
+    color: #000;
+  }
 
 
 /*encabezado*/

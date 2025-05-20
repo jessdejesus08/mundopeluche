@@ -110,6 +110,26 @@
     .botones-producto button:hover {
       background-color: #444;
     }
+
+    #panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  max-height: 80vh; /* Limita altura al 80% del viewport */
+  background: #ffffff;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  padding: 20px 30px 30px 30px;
+  display: none;
+  z-index: 2000;
+  overflow-y: auto;  /* Aquí habilita el scroll vertical */
+}
+
+
+ 
   </style>
   <br><header>
       <nav>
@@ -117,8 +137,8 @@
         <ul class="nav-list">
           <img src="logooso.png" class="nav-img" >
           <li><a href="proyecto.html" class="nav-item">Inicio</a></li>
-          <li><a href="prueba1.html" class="nav-item" >Catalogo</a></li>
-          <li><a href="otro.html" class="nav-item">Contactanos</a></li>
+          <li><a href="catalogo.html" class="nav-item" >Catalogo</a></li>
+          <li><a href="contactanos.html" class="nav-item">Contactanos</a></li>
         </ul>
       </nav>
     </header>
@@ -160,11 +180,12 @@
       <div class="container-quantity">
         <input type="number" placeholder="1" value="1" min="1" class="input-quantity">
               <center>
-<button id="abrir-panel" class="btn-add-to-cart" >Comprar</button>
+ <br><button id="abrir-panel" class="btn-add-to-cart" >Comprar</button><br>
 <!-- Botón para agregar al carrito -->
-<button onclick="agregarAlCarrito('Lagartija Azul', 150)">Agregar al carrito</button>
+<button onclick="agregarAlCarrito('Lagartija Azul', 150)" class="ag_cart">Agregar al carrito</button>
 
-<div id="panel" style="display: none;">
+<div id="panel">
+  <button id="cerrar-panel" aria-label="Cerrar panel">✖</button>
   <form id="formulario">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" required>
@@ -201,8 +222,9 @@
     <label for="cvv">CVV:</label>
     <input type="text" id="cvv" name="cvv" required>
 
-    <button id="enviar">Enviar</button>
+    <button id="enviar" type="submit">Enviar</button>
   </form>
+</div>
 </div>
 <script type="text/javascript">
   document.getElementById("abrir-panel").addEventListener("click", function() {
@@ -267,6 +289,24 @@
   }
 
   actualizarCarrito();
+
+  // Mostrar panel al hacer clic en botón "Comprar"
+  document.getElementById("abrir-panel").addEventListener("click", function() {
+    document.getElementById("panel").style.display = "block";
+  });
+
+  // Cerrar panel al hacer clic en la X
+  document.getElementById("cerrar-panel").addEventListener("click", function() {
+    document.getElementById("panel").style.display = "none";
+  });
+
+  // Manejo del envío del formulario
+  document.getElementById("formulario").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Compra enviada correctamente.");
+    document.getElementById("panel").style.display = "none";
+    this.reset();
+  });
 </script>
 
       </div>
