@@ -1,0 +1,817 @@
+.D{
+  color:black;
+  position:absolute;
+  top:558px;
+  left:320px;
+  font-size:50px;
+}
+*{
+  margin: 0px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2em;
+  transition: color 0.3s;
+}
+
+.nav-item:hover {
+  color: #ff6f61;  /* Color de hover */
+}
+<header>
+      <nav>
+        
+        <ul class="nav-list">
+          <li><a href="otro.html" class="nav-item">Inicio</a></li>
+          <li><a href="otro.html" class="nav-item">Ordenes</a></li>
+          <li><a href="otro.html" target="_blank" class="nav-item">Clientes</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+    h1{
+  margin: 20px;
+  border: 20px solid;
+  border-image: url("https://img1.picmix.com/output/stamp/normal/2/1/9/5/1885912_cf3cc.gif") 50/30px repeat;
+  padding: 20px
+}
+https://blog.hubspot.es/website/como-insertar-video-html
+<video width="500px" height="350px" controls>
+      <source src="" type="video/mp4">
+      Tu navegador no soporta esta etiqueta
+    </video>
+    item img{
+  width: 100px;
+}
+
+.container{6
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+.item{
+  text-align: center;
+}
+
+
+
+<div class="container">
+      <div class="item">
+        <img src="https://cdn.pixabay.com/photo/2022/12/18/16/38/pencil-7663804_1280.png">
+        <p>Texto</p>
+      </div>
+    
+      <div class="item">
+        <img src="https://cdn.pixabay.com/photo/2022/12/18/16/38/pencil-7663804_1280.png">
+        <p>Texto</p>
+      </div>
+
+      <div class="item">
+        <img src="https://cdn.pixabay.com/photo/2022/12/18/16/38/pencil-7663804_1280.png">
+        <p>Texto</p>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo</title>
+  <link rel="stylesheet" href="catalogocss.css">
+
+  <style>
+    /* Ícono fijo del carrito */
+    .carrito-icono {
+      position: fixed;
+      top: 110px;
+      right: 30px;
+      font-size: 24px;
+      background-color: #000;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 50px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    /* Contador pequeño sobre el ícono */
+    .carrito-icono span {
+      background-color: red;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 14px;
+      margin-left: 5px;
+    }
+
+    /* Ventana emergente del carrito */
+    .carrito {
+      position: fixed;
+      right: 20px;
+      top: 160px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      width: 300px;
+      padding: 20px;
+      display: none;
+      z-index: 999;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Título carrito */
+    .carrito h2 {
+      margin-top: 0;
+    }
+
+    /* Lista sin estilos, con scroll */
+    .carrito ul {
+      list-style: none;
+      padding: 0;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    /* Botones del carrito */
+    .carrito button {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+
+    /* Estilo de cada item en carrito */
+    .carrito li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    /* Botón eliminar producto */
+    .carrito li button {
+      background-color: red;
+      color: white;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 4px;
+      width: auto;
+      cursor: pointer;
+    }
+
+    /* Contenedor de botones "Ver más" y "Agregar al carrito" */
+    .botones-producto {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    /* Botones producto */
+    .botones-producto button {
+      padding: 8px 12px;
+      border: none;
+      background-color: #000;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    /* Hover botones */
+    .botones-producto button:hover {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body bgcolor=#c3e5e7>
+
+  <header>
+    <div class="conteiner-icon">
+      <ul class="nav-list">
+        <li><img src="logooso.png" class="nav-img" alt="Logo"></li>
+        <li><a href="proyecto.html" class="nav-item">Inicio</a></li>
+        <li><a href="catalogo.html" class="nav-item">Catálogo</a></li>
+        <li><a href="contactanos.html" class="nav-item">Contáctanos</a></li>
+      </ul>
+    </div>
+   <div style="position: absolute; top: 20px; left: 1100px; display: flex; gap: 10px;">
+  <button onclick="abrirRegistro()" style="background-color: #000; color: white; border: none; padding: 5px 10px; border-radius: 10px; cursor: pointer;">
+    Registrarse
+  </button>
+  <button onclick="abrirLogin()" style="background-color: #000; color: white; border: none; padding: 5px 10px; border-radius: 10px; cursor: pointer;">
+    Iniciar sesión
+  </button>
+</div>
+
+  </header>
+
+  <!-- Icono carrito con contador -->
+  <div class="carrito-icono" onclick="mostrarCarrito()">🛒 <span id="contador-carrito">0</span></div>
+
+  <!-- Ventana carrito -->
+  <div id="carrito" class="carrito">
+    <h2>Carrito de compras</h2>
+    <ul id="lista-carrito"></ul>
+    <p id="total-carrito">Total: $0.00</p>
+    <button onclick="cerrarCarrito()">Cerrar</button>
+  </div>
+
+  <main>
+    <h1>Catálogo</h1>
+    <center>
+    <input type="text" id="buscador" placeholder="Buscar...">
+
+    <!-- Resultados búsqueda -->
+    <div id="contenedor-resultados" style="display: none;">
+      <h2>Resultados de búsqueda</h2>
+      <div id="resultados" class="conteiner-items"></div>
+    </div>
+
+    <!-- Lista productos -->
+    <div class="conteiner-items">
+
+      <!-- Producto 1 -->
+      <div class="item">
+        <figure><img src="producto1.jpg" alt="Lagartija Azul"></figure>
+        <div class="info-product">
+          <h2>Lagartija Azul</h2>
+          <h3>$150.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto1.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Lagartija Azul', 150)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="item">
+        <figure><img src="producto2.jpg" alt="Nutria"></figure>
+        <div class="info-product">
+          <h2>Nutria</h2>
+          <h3>$80.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto2.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Nutria', 80)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="item">
+        <figure><img src="producto3.jpg" alt="Pingüino"></figure>
+        <div class="info-product">
+          <h2>Pingüino</h2>
+          <h3>$200.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto3.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Pingüino', 200)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="item">
+        <figure><img src="producto4.jpg" alt="Oso Navideño"></figure>
+        <div class="info-product">
+          <h2>Oso Navideño</h2>
+          <h3>$120.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto4.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Oso Navideño', 120)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="item">
+        <figure><img src="producto5.jpg" alt="Chancho"></figure>
+        <div class="info-product">
+          <h2>Chancho</h2>
+          <h3>$250.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto5.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Chancho', 250)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 6 -->
+      <div class="item">
+        <figure><img src="producto6.jpg" alt="Elefante"></figure>
+        <div class="info-product">
+          <h2>Elefante</h2>
+          <h3>$150.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto6.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Elefante', 150)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 7 -->
+      <div class="item">
+        <figure><img src="producto7.jpg" alt="Raton"></figure>
+        <div class="info-product">
+          <h2>Raton</h2>
+          <h3>$50.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto7.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Raton', 50)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 8 -->
+      <div class="item">
+        <figure><img src="producto8.jpg" alt="Doraemon"></figure>
+        <div class="info-product">
+          <h2>Doraemon</h2>
+          <h3>$250.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto8.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Doraemon', 250)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 9 -->
+      <div class="item">
+        <figure><img src="producto9.jpg" alt="Tortuga"></figure>
+        <div class="info-product">
+          <h2>Tortuga</h2>
+          <h3>$120.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto9.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Tortuga', 120)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 10 -->
+      <div class="item">
+        <figure><img src="producto10.jpg" alt="Conejito"></figure>
+        <div class="info-product">
+          <h2>Conejito</h2>
+          <h3>$50.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto10.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Conejito', 50)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+       <!-- Producto 11 -->
+      <div class="item">
+        <figure><img src="producto11.jpg" alt="Oso rosa"></figure>
+        <div class="info-product">
+          <h2>Oso rosa</h2>
+          <h3>$150.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto11.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Oso rosa', 150)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 12 -->
+      <div class="item">
+        <figure><img src="producto12.jpg" alt="Kirby"></figure>
+        <div class="info-product">
+          <h2>Kirby</h2>
+          <h3>$250.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto12.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Kirby', 250)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 13 -->
+      <div class="item">
+        <figure><img src="producto13.jpg" alt="Cerdo minecraft"></figure>
+        <div class="info-product">
+          <h2>Cerdo minecraft</h2>
+          <h3>$400.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto13.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Cerdo minecraft', 400)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 14 -->
+      <div class="item">
+        <figure><img src="producto14.jpg" alt="Vaca"></figure>
+        <div class="info-product">
+          <h2>Vaca</h2>
+          <h3>$200.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto14.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Vaca', 200)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 15 -->
+      <div class="item">
+        <figure><img src="producto15.jpg" alt="Chococat"></figure>
+        <div class="info-product">
+          <h2>Chococat</h2>
+          <h3>$500.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto15.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Chococat', 500)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 16 -->
+      <div class="item">
+        <figure><img src="producto16.jpg" alt="Totoro"></figure>
+        <div class="info-product">
+          <h2>Totoro</h2>
+          <h3>$500.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto16.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Totoro', 500)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+       <!-- Producto 17 -->
+      <div class="item">
+        <figure><img src="producto17.jpg" alt="Rata"></figure>
+        <div class="info-product">
+          <h2>Rata</h2>
+          <h3>$100.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto17.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Rata', 100)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+       <!-- Producto 18 -->
+      <div class="item">
+        <figure><img src="producto18.jpg" alt="Rana"></figure>
+        <div class="info-product">
+          <h2>Rana</h2>
+          <h3>$280.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto18.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Rana', 280)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+       <!-- Producto 19 -->
+      <div class="item">
+        <figure><img src="producto19.jpg" alt="rilakkuma"></figure>
+        <div class="info-product">
+          <h2>rilakkuma</h2>
+          <h3>$320.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto19.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('rilakkuma', 320)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+<!-- Producto 20 -->
+      <div class="item">
+        <figure><img src="producto20.jpg" alt="Pareja de osos"></figure>
+        <div class="info-product">
+          <h2>Pareja de osos</h2>
+          <h3>$200.00</h3>
+          <div class="botones-producto">
+            <button onclick="location.href='producto20.html'">Ver más</button>
+            <button onclick="agregarAlCarrito('Pareja de osos', 200)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </center>
+  </main>
+<!-- Panel flotante de registro -->
+<div id="panelRegistro" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.6); z-index: 2000; justify-content: center; align-items: center;">
+  <div style="background: white; padding: 30px; border-radius: 8px; width: 90%; max-width: 400px; position: relative;">
+    <button onclick="cerrarRegistro()" style="position: absolute; top: 10px; right: 10px; background: red; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">X</button>
+    <h2>Formulario de Registro</h2>
+    <form id="formRegistro">
+      <label>Nombre:</label><br>
+      <input type="text" id="nombre" required style="width: 100%; padding: 8px;"><br><br>
+
+      <label>Email:</label><br>
+      <input type="email" id="email" required style="width: 100%; padding: 8px;"><br><br>
+
+      <label>Contraseña:</label><br>
+      <input type="password" id="password" required style="width: 100%; padding: 8px;"><br><br>
+
+      <button type="submit" style="padding: 10px 20px; background-color: black; color: white; border: none;">Registrarse</button>
+    </form>
+    <p id="mensajeRegistro" style="margin-top: 10px;"></p>
+  </div>
+</div>
+<!-- Panel flotante de inicio de sesión -->
+<div id="panelLogin" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.6); z-index: 2000; justify-content: center; align-items: center;">
+  <div style="background: white; padding: 30px; border-radius: 8px; width: 90%; max-width: 400px; position: relative;">
+    <button onclick="cerrarLogin()" style="position: absolute; top: 10px; right: 10px; background: red; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">X</button>
+    <h2>Iniciar Sesión</h2>
+    <form id="formLogin">
+      <label>Email:</label><br>
+      <input type="email" id="loginEmail" required style="width: 100%; padding: 8px;"><br><br>
+
+      <label>Contraseña:</label><br>
+      <input type="password" id="loginPassword" required style="width: 100%; padding: 8px;"><br><br>
+
+      <button type="submit" style="padding: 10px 20px; background-color: black; color: white; border: none;">Ingresar</button>
+    </form>
+    <p id="mensajeLogin" style="margin-top: 10px;"></p>
+  </div>
+</div>
+
+<div id="saludoContainer" style="position: fixed; top: 20px; right: 100px; display: flex; gap: 10px; align-items: center;">
+  <p id="saludoUsuario" style="background-color: #eee; padding: 10px; border-radius: 8px; margin: 0;"></p>
+  <button id="btnCerrarSesion" onclick="cerrarSesion()" style="background-color: red; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">Cerrar sesión</button>
+</div>
+
+
+<script>
+  const productos = [
+      { nombre: "Lagartija Azul", precio: "$150.00", enlace: "producto1.html", imagen: "producto1.jpg" },
+      { nombre: "Nutria", precio: "$80.00", enlace: "producto2.html", imagen: "producto2.jpg" },
+      { nombre: "Pingüino", precio: "$200.00", enlace: "producto3.html", imagen: "producto3.jpg" },
+      { nombre: "Oso Navideño", precio: "$120.00", enlace: "producto4.html", imagen: "producto4.jpg" },
+      { nombre: "Chancho", precio: "$250.00", enlace: "producto5.html", imagen: "producto5.jpg" },
+      { nombre: "Elefante", precio: "$150.00", enlace: "producto6.html", imagen: "producto6.jpg" },
+      { nombre: "Raton", precio: "$50.00", enlace: "producto7.html", imagen: "producto7.jpg" },
+      { nombre: "Doraemon", precio: "$250.00", enlace: "producto8.html", imagen: "producto8.jpg" },
+      { nombre: "Tortuga", precio: "$120.00", enlace: "producto9.html", imagen: "producto9.jpg" },
+      { nombre: "Conejito", precio: "$50.00", enlace: "producto10.html", imagen: "producto10.jpg" },
+      { nombre: "Oso rosa", precio: "$150.00", enlace: "producto11.html", imagen: "producto11.jpg" },
+      { nombre: "Kirby", precio: "$250.00", enlace: "producto12.html", imagen: "producto12.jpg" },
+      { nombre: "Cerdo minecraft", precio: "$400.00", enlace: "producto13.html", imagen: "producto13.jpg" },
+      { nombre: "Vaca", precio: "$200.00", enlace: "producto14.html", imagen: "producto14.jpg" },
+      { nombre: "Chococat", precio: "$500.00", enlace: "producto15.html", imagen: "producto15.jpg" },
+      { nombre: "Totoro", precio: "$500.00", enlace: "producto16.html", imagen: "producto16.jpg" },
+      { nombre: "Rata", precio: "$100.00", enlace: "producto17.html", imagen: "producto17.jpg" },
+      { nombre: "Rana", precio: "$280.00", enlace: "producto18.html", imagen: "producto18.jpg" },
+      { nombre: "rilakkuma", precio: "$220.00", enlace: "producto19.html", imagen: "producto19.jpg" },
+      { nombre: "Parejita de osos", precio: "$100.00", enlace: "producto20.html", imagen: "producto20.jpg" },
+    ];
+
+    const buscador = document.getElementById("buscador");
+    const resultados = document.getElementById("resultados");
+    const contenedorResultados = document.getElementById("contenedor-resultados");
+
+    buscador.addEventListener("input", () => {
+      const textoBusqueda = buscador.value.toLowerCase().trim();
+
+      if (textoBusqueda === "") {
+        resultados.innerHTML = "";
+        contenedorResultados.style.display = "none";
+        return;
+      }
+
+      const resultadosBusqueda = productos.filter(producto =>
+        producto.nombre.toLowerCase().includes(textoBusqueda)
+      );
+
+      resultados.innerHTML = "";
+
+      if (resultadosBusqueda.length > 0) {
+        contenedorResultados.style.display = "block";
+
+        resultadosBusqueda.forEach((resultado) => {
+          const elemento = document.createElement("div");
+          elemento.classList.add("item");
+
+          elemento.innerHTML = `
+            <figure>
+              <img src="${resultado.imagen}" alt="${resultado.nombre}">
+            </figure>
+            <div class="info-product">
+              <h2>${resultado.nombre}</h2>
+              <h3 class="price">${resultado.precio}</h3>
+              <button onclick="location.href='${resultado.enlace}'">Ver más</button>
+            </div>
+          `;
+
+          resultados.appendChild(elemento);
+        });
+      } else {
+        contenedorResultados.style.display = "block";
+        resultados.innerHTML = "<p>No se encontraron resultados.</p>";
+      }
+    });
+  // Carrito almacenado localmente
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  function actualizarCarrito() {
+    const contador = document.getElementById('contador-carrito');
+    const lista = document.getElementById('lista-carrito');
+    const totalCarrito = document.getElementById('total-carrito');
+
+    let totalCantidad = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
+    contador.textContent = totalCantidad;
+
+    lista.innerHTML = '';
+    let total = 0;
+    carrito.forEach((producto, index) => {
+      const li = document.createElement('li');
+      li.textContent = `${producto.nombre} x${producto.cantidad} - $${(producto.precio * producto.cantidad).toFixed(2)}`;
+
+      const btnEliminar = document.createElement('button');
+      btnEliminar.textContent = 'X';
+      btnEliminar.onclick = () => {
+        carrito.splice(index, 1);
+        guardarCarrito();
+        actualizarCarrito();
+      };
+
+      li.appendChild(btnEliminar);
+      lista.appendChild(li);
+      total += producto.precio * producto.cantidad;
+    });
+
+    totalCarrito.textContent = `Total: $${total.toFixed(2)}`;
+  }
+
+  function guardarCarrito() {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+  }
+
+  function agregarAlCarrito(nombre, precio) {
+    const productoExistente = carrito.find(p => p.nombre === nombre);
+    if (productoExistente) {
+      productoExistente.cantidad++;
+    } else {
+      carrito.push({ nombre, precio, cantidad: 1 });
+    }
+    guardarCarrito();
+    actualizarCarrito();
+  }
+
+  function mostrarCarrito() {
+    document.getElementById('carrito').style.display = 'block';
+  }
+
+  function cerrarCarrito() {
+    document.getElementById('carrito').style.display = 'none';
+  }
+
+  actualizarCarrito();
+
+  // Registro
+  function abrirRegistro() {
+    document.getElementById('panelRegistro').style.display = 'flex';
+  }
+
+  function cerrarRegistro() {
+    document.getElementById('panelRegistro').style.display = 'none';
+  }
+
+  // Login
+  function abrirLogin() {
+    document.getElementById('panelLogin').style.display = 'flex';
+  }
+
+  function cerrarLogin() {
+    document.getElementById('panelLogin').style.display = 'none';
+  }
+
+  // Registro
+  const formRegistro = document.getElementById('formRegistro');
+  formRegistro.onsubmit = function (e) {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    localStorage.setItem('usuario', JSON.stringify({ nombre, email, password }));
+    document.getElementById('mensajeRegistro').textContent = "Registro exitoso.";
+    formRegistro.reset();
+  };
+
+  // Login
+  const formLogin = document.getElementById('formLogin');
+  formLogin.onsubmit = function (e) {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+    const usuario = JSON.parse(localStorage.getItem('usuario'));
+
+    if (usuario && usuario.email === email && usuario.password === password) {
+      localStorage.setItem('logueado', 'true');
+      document.getElementById('panelLogin').style.display = 'none';
+      document.getElementById('mensajeLogin').textContent = '';
+
+      // Mostrar saludo y botón cerrar sesión
+      document.getElementById('saludoUsuario').textContent = `Hola, ${usuario.nombre}`;
+      document.getElementById('saludoContainer').style.display = 'flex';
+
+      // Ocultar botones de inicio de sesión y registro
+      document.querySelector('button[onclick="abrirRegistro()"]').style.display = 'none';
+      document.querySelector('button[onclick="abrirLogin()"]').style.display = 'none';
+
+    } else {
+      document.getElementById('mensajeLogin').textContent = 'Correo o contraseña incorrectos.';
+    }
+  };
+
+  function cerrarSesion() {
+    localStorage.removeItem('logueado');
+    document.getElementById('saludoUsuario').textContent = '';
+    document.getElementById('saludoContainer').style.display = 'none';
+
+    // Mostrar botones de inicio de sesión y registro
+    document.querySelector('button[onclick="abrirRegistro()"]').style.display = 'inline-block';
+    document.querySelector('button[onclick="abrirLogin()"]').style.display = 'inline-block';
+  }
+
+  // Al cargar la página
+  window.onload = function () {
+    const logueado = localStorage.getItem('logueado') === 'true';
+    const usuario = JSON.parse(localStorage.getItem('usuario'));
+
+    if (logueado && usuario) {
+      document.getElementById('saludoUsuario').textContent = `Hola, ${usuario.nombre}`;
+      document.getElementById('saludoContainer').style.display = 'flex';
+
+      // Ocultar botones
+      document.querySelector('button[onclick="abrirRegistro()"]').style.display = 'none';
+      document.querySelector('button[onclick="abrirLogin()"]').style.display = 'none';
+    } else {
+      document.getElementById('saludoContainer').style.display = 'none';
+    }
+  };
+
+</script>
+
+</body>
+</html>

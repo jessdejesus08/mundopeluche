@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Computers RG Oficial</title>
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+    }
+
+    .conteiner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links a, .nav-links select {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      background: transparent;
+      border: none;
+      font-size: 16px;
+    }
+
+    .nav-links select {
+      color: #333;
+      background: #fff;
+      border-radius: 5px;
+      padding: 5px;
+    }
+
+    #btnRegistro, #btnLogin, #btnCerrarSesion {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+
+    #btnCerrarSesion {
+      background-color: #dc3545;
+    }
+
+    /* Panel flotante */
+    .panel-flotante {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .panel-flotante form {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      min-width: 300px;
+    }
+
+    .panel-flotante input {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .panel-flotante button {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .panel-flotante button[type="submit"] {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .panel-flotante button[type="button"] {
+      background-color: #6c757d;
+      color: white;
+    }
+
+    #mensajeRegistro, #mensajeLogin {
+      font-size: 14px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="conteiner">
+      <div class="logo">
+        <img src="logito.png" width="60px" alt="Logo" />
+      </div>
+      <nav class="nav-links">
+        <a href="mipagina.html">Recaudación</a>
+        <a href="historia.html">Un poco de nosotros</a>
+        <select id="catalogo" onchange="redireccionar(this.value)">
+          <option value="">Catálogo</option>
+          <option value="compu.html">Computadoras</option>
+          <option value="teclados.html">Teclados</option>
+          <option value="mauses.html">Mouse</option>
+          <option value="bocinas.html">Bocinas</option>
+        </select>
+        <a href="https://www.instagram.com/lukwn/">
+          <img class="insta" src="insta.png" width="35px" alt="Instagram" />
+        </a>
+      </nav>
+      <div style="display: flex; gap: 10px;">
+        <button id="btnRegistro" onclick="abrirRegistro()">Registrarse</button>
+        <button id="btnLogin" onclick="abrirLogin()">Iniciar sesión</button>
+      </div>
+      <div id="saludoContainer" style="display: none; gap: 10px; align-items: center;">
+        <p id="saludoUsuario" style="background-color: #eee; padding: 10px; border-radius: 8px; margin: 0;"></p>
+        <button id="btnCerrarSesion" onclick="cerrarSesion()">Cerrar sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Paneles flotantes -->
+  <div id="panelRegistro" class="panel-flotante" style="display: none;">
+    <form id="formRegistro">
+      <h2>Registro</h2>
+      <input type="text" id="nombre" placeholder="Nombre" required />
+      <input type="email" id="email" placeholder="Correo electrónico" required />
+      <input type="password" id="password" placeholder="Contraseña" required />
+      <button type="submit">Registrarse</button>
+      <button type="button" onclick="cerrarRegistro()">Cancelar</button>
+      <p id="mensajeRegistro"></p>
+    </form>
+  </div>
+
+  <div id="panelLogin" class="panel-flotante" style="display: none;">
+    <form id="formLogin">
+      <h2>Iniciar sesión</h2>
+      <input type="email" id="loginEmail" placeholder="Correo electrónico" required />
+      <input type="password" id="loginPassword" placeholder="Contraseña" required />
+      <button type="submit">Iniciar sesión</button>
+      <button type="button" onclick="cerrarLogin()">Cancelar</button>
+      <p id="mensajeLogin"></p>
+    </form>
+  </div>
+
+  <script>
+    function redireccionar(seleccion) {
+      if (seleccion) window.location.href = seleccion;
+    }
+
+    function abrirRegistro() {
+      document.getElementById('panelRegistro').style.display = 'flex';
+    }
+
+    function cerrarRegistro() {
+      document.getElementById('panelRegistro').style.display = 'none';
+    }
+
+    function abrirLogin() {
+      document.getElementById('panelLogin').style.display = 'flex';
+    }
+
+    function cerrarLogin() {
+      document.getElementById('panelLogin').style.display = 'none';
+    }
+
+    function actualizarEstadoUsuario() {
+      const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
+      const saludoContainer = document.getElementById('saludoContainer');
+      const saludoUsuario = document.getElementById('saludoUsuario');
+      const btnRegistro = document.getElementById('btnRegistro');
+      const btnLogin = document.getElementById('btnLogin');
+
+      if (usuarioLogueado) {
+        saludoUsuario.textContent = `Hola, ${usuarioLogueado.nombre}`;
+        saludoContainer.style.display = 'flex';
+        btnRegistro.style.display = 'none';
+        btnLogin.style.display = 'none';
+      } else {
+        saludoContainer.style.display = 'none';
+        btnRegistro.style.display = 'inline-block';
+        btnLogin.style.display = 'inline-block';
+      }
+    }
+
+    function cerrarSesion() {
+      localStorage.removeItem('usuarioLogueado');
+      actualizarEstadoUsuario();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      actualizarEstadoUsuario();
+
+      document.getElementById('formRegistro').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const nombre = document.getElementById('nombre').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+        const mensaje = document.getElementById('mensajeRegistro');
+
+        if (!nombre || !email || !password) {
+          mensaje.textContent = 'Por favor, completa todos los campos.';
+          mensaje.style.color = 'red';
+          return;
+        }
+
+        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        const existe = usuarios.some(u => u.email === email);
+
+        if (existe) {
+          mensaje.textContent = 'Este correo ya está registrado.';
+          mensaje.style.color = 'red';
+          return;
+        }
+
+        const nuevoUsuario = { nombre, email, password };
+        usuarios.push(nuevoUsuario);
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        localStorage.setItem('usuarioLogueado', JSON.stringify(nuevoUsuario));
+
+        actualizarEstadoUsuario();
+
+        mensaje.textContent = 'Registro exitoso 🎉';
+        mensaje.style.color = 'green';
+        document.getElementById('formRegistro').reset();
+
+        setTimeout(() => {
+          cerrarRegistro();
+          mensaje.textContent = '';
+        }, 1500);
+      });
+
+      document.getElementById('formLogin').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById('loginEmail').value.trim();
+        const password = document.getElementById('loginPassword').value;
+        const mensaje = document.getElementById('mensajeLogin');
+
+        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        const usuario = usuarios.find(u => u.email === email && u.password === password);
+
+        if (usuario) {
+          localStorage.setItem('usuarioLogueado', JSON.stringify(usuario));
+          mensaje.textContent = 'Inicio de sesión exitoso ✅';
+          mensaje.style.color = 'green';
+          document.getElementById('formLogin').reset();
+
+          setTimeout(() => {
+            cerrarLogin();
+            mensaje.textContent = '';
+            actualizarEstadoUsuario();
+          }, 1000);
+        } else {
+          mensaje.textContent = 'Credenciales incorrectas ❌';
+          mensaje.style.color = 'red';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

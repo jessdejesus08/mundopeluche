@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+  <title>cosa azul</title>
+ </head>
+ <body bgcolor="#b2eaec">
+  <link rel="stylesheet" type="text/css" href="productos.css ">
+  <style>
+    /* Ícono fijo del carrito */
+    .carrito-icono {
+      position: fixed;
+      top: 110px;
+      right: 30px;
+      font-size: 24px;
+      background-color: #000;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 50px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    /* Contador pequeño sobre el ícono */
+    .carrito-icono span {
+      background-color: red;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 14px;
+      margin-left: 5px;
+    }
+
+    /* Ventana emergente del carrito */
+    .carrito {
+      position: fixed;
+      right: 20px;
+      top: 160px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      width: 300px;
+      padding: 20px;
+      display: none;
+      z-index: 999;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Título carrito */
+    .carrito h2 {
+      margin-top: 0;
+    }
+
+    /* Lista sin estilos, con scroll */
+    .carrito ul {
+      list-style: none;
+      padding: 0;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    /* Botones del carrito */
+    .carrito button {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+
+    /* Estilo de cada item en carrito */
+    .carrito li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    /* Botón eliminar producto */
+    .carrito li button {
+      background-color: red;
+      color: white;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 4px;
+      width: auto;
+      cursor: pointer;
+    }
+
+    /* Contenedor de botones "Ver más" y "Agregar al carrito" */
+    .botones-producto {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    /* Botones producto */
+    .botones-producto button {
+      padding: 8px 12px;
+      border: none;
+      background-color: #000;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    /* Hover botones */
+    .botones-producto button:hover {
+      background-color: #444;
+    }
+
+    #panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  max-height: 80vh; /* Limita altura al 80% del viewport */
+  background: #ffffff;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  padding: 20px 30px 30px 30px;
+  display: none;
+  z-index: 2000;
+  overflow-y: auto;  /* Aquí habilita el scroll vertical */
+}
+
+
+ 
+  </style>
+  <br><header>
+      <nav>
+        
+        <ul class="nav-list">
+          <img src="logooso.png" class="nav-img" >
+          <li><a href="proyecto.html" class="nav-item">Inicio</a></li>
+          <li><a href="catalogo.html" class="nav-item" >Catalogo</a></li>
+          <li><a href="contactanos.html" class="nav-item">Contactanos</a></li>
+        </ul>
+      </nav>
+    </header>
+  <!-- Icono carrito con contador -->
+  <div class="carrito-icono" onclick="mostrarCarrito()">🛒 <span id="contador-carrito">0</span></div>
+
+  <!-- Ventana carrito -->
+  <div id="carrito" class="carrito">
+    <h2>Carrito de compras</h2>
+    <ul id="lista-carrito"></ul>
+    <p id="total-carrito">Total: $0.00</p>
+    <button onclick="cerrarCarrito()">Cerrar</button>
+  </div>
+
+<main>
+
+  <div class="container-img"> 
+    <img src="producto1.jpg">
+  </div>
+
+  <div class="container-info-product">
+    <div class="container-price">
+    <h1>Lagartija Azul</h1>
+    <span> $150.00</span> 
+    </div>
+    <div class="container-descripcion ">
+      <div class="title-descripcion">
+        <h2>Descripcion</h2>
+        </div>
+        <div class="container-details-product"> 
+      <div class="text-descripcion">
+        <p>Este adorable peluche de lagartija azul es un compañero perfecto para cualquier <br>persona que ame los reptiles. <br><br>Con una altura de 50 centímetros y un ancho de 30 centímetros, este peluche es lo <br>suficientemente grande como para ser un compañero de juego, pero lo suficientemente <br>pequeño como para ser fácil de llevar en brazos.<br><br> Su cuerpo está hecho de un suave material de peluche que es agradable al tacto, y su<br> color azul brillante es seguro de llamar la atención.<br>
+                <br>
+        Este peluche es ideal para niños y adultos por igual, y es un regalo perfecto para <br>cualquier persona que ame los animales.<br> <br>Ya sea que lo uses como un compañero de juego, un decorativo para tu habitación o <br>un regalo para un ser querido, este peluche de lagartija azul es seguro de ser un éxito. </p>
+        <br>
+      </div>
+      <br><br>
+    <div class="container-add-cart">
+      <div class="container-quantity">
+        <input type="number" placeholder="1" value="1" min="1" class="input-quantity">
+              <center>
+ <br><button id="abrir-panel" class="btn-add-to-cart" >Comprar</button><br>
+<!-- Botón para agregar al carrito -->
+<button onclick="agregarAlCarrito('Lagartija Azul', 150)" class="ag_cart">Agregar al carrito</button>
+
+<div id="panel">
+  <button id="cerrar-panel" aria-label="Cerrar panel">✖</button>
+  <form id="formulario">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" required>
+
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" name="telefono" required>
+
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" name="direccion" required>
+
+    <label for="ciudad">Ciudad:</label>
+    <input type="text" id="ciudad" name="ciudad" required>
+
+    <label for="pais">País:</label>
+    <select id="pais" name="pais" required>
+      <option value="">Seleccione un país</option>
+      <option value="México">México</option>
+      <option value="Estados Unidos">Estados Unidos</option>
+      <option value="Canadá">Canadá</option>
+    </select>
+
+    <label for="tarjeta">Número de tarjeta:</label>
+    <input type="text" id="tarjeta" name="tarjeta" required>
+
+    <label for="fechaVencimiento">Fecha de vencimiento:</label>
+    <input type="date" id="fechaVencimiento" name="fechaVencimiento" required>
+
+    <label for="cvv">CVV:</label>
+    <input type="text" id="cvv" name="cvv" required>
+
+    <button id="enviar" type="submit">Enviar</button>
+  </form>
+</div>
+</div>
+<script type="text/javascript">
+  document.getElementById("abrir-panel").addEventListener("click", function() {
+    var panel = document.getElementById("panel");
+    panel.style.display = (panel.style.display === "none") ? "block" : "none";
+  });
+
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  function actualizarCarrito() {
+    const contador = document.getElementById('contador-carrito');
+    const lista = document.getElementById('lista-carrito');
+    const totalCarrito = document.getElementById('total-carrito');
+
+    let totalCantidad = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
+    contador.textContent = totalCantidad;
+
+    lista.innerHTML = '';
+    let total = 0;
+
+    carrito.forEach((producto, index) => {
+      const li = document.createElement('li');
+      li.textContent = `${producto.nombre} x${producto.cantidad} - $${(producto.precio * producto.cantidad).toFixed(2)}`;
+
+      const btnEliminar = document.createElement('button');
+      btnEliminar.textContent = 'X';
+      btnEliminar.onclick = () => {
+        carrito.splice(index, 1);
+        guardarCarrito();
+        actualizarCarrito();
+      };
+
+      li.appendChild(btnEliminar);
+      lista.appendChild(li);
+      total += producto.precio * producto.cantidad;
+    });
+
+    totalCarrito.textContent = `Total: $${total.toFixed(2)}`;
+  }
+
+  function guardarCarrito() {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+  }
+
+  function agregarAlCarrito(nombre, precio) {
+    const productoExistente = carrito.find(p => p.nombre === nombre);
+    if (productoExistente) {
+      productoExistente.cantidad++;
+    } else {
+      carrito.push({ nombre, precio, cantidad: 1 });
+    }
+    guardarCarrito();
+    actualizarCarrito();
+  }
+
+  function mostrarCarrito() {
+    document.getElementById('carrito').style.display = 'block';
+  }
+
+  function cerrarCarrito() {
+    document.getElementById('carrito').style.display = 'none';
+  }
+
+  actualizarCarrito();
+
+  // Mostrar panel al hacer clic en botón "Comprar"
+  document.getElementById("abrir-panel").addEventListener("click", function() {
+    document.getElementById("panel").style.display = "block";
+  });
+
+  // Cerrar panel al hacer clic en la X
+  document.getElementById("cerrar-panel").addEventListener("click", function() {
+    document.getElementById("panel").style.display = "none";
+  });
+
+  // Manejo del envío del formulario
+  document.getElementById("formulario").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Compra enviada correctamente.");
+    document.getElementById("panel").style.display = "none";
+    this.reset();
+  });
+</script>
+
+      </div>
+     </div>
+    </div>
+  </div>
+  </div>
+</main>
+ </body>
+ </html>
